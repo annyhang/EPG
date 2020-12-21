@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Tutorial</h2>
+<div>
+    {% load static %}
+    <embed type="application/pdf" src="{% static 'EPGWebAnalysis/images/matlab_tutorial.pdf' %}" width="800px" height="1000px">
+</div>
+{% endblock %}

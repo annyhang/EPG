@@ -1,0 +1,23 @@
+<h1>Annotate</h1>
+
+<table class="table">
+    <thread>
+        <tr>
+            <th>File</th>
+            <th>Delete</th>
+        </tr>
+    </thread>
+    <tbody>
+        {% for recording in recordings %}
+            <tr>
+                <td>{{ recording.uploaded_file }}</td>
+                <td>
+                    <form method="POST" action="{% url  'delete-file' recording.pk %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
